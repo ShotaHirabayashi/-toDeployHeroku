@@ -2,5 +2,36 @@
 
 
 {% block content %}
-    <h1>address</h1>
+<h1>address</h1>
+
+<div class="container">
+    <div class="row">
+
+
+        {% if all_address %}
+
+        {% for code in all_address  %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                {{code.name}} <br>
+                {{code.email}} <br>
+                {{code.email}} <br>
+                {{code.phone}} <br>
+                {{code.address}} <br>
+                {{code.city}} <br>
+                {{code.state}} <br>
+                {{code.zip}} <br>
+                <a href="{%url 'edit' code.id%}" class="btn btn-success">Edit</a>
+            </div>
+            <br>
+        </div>
+
+        {% endfor %}
+        {% endif %}
+
+    </div>
+</div>
+
+
 {% endblock content %}
